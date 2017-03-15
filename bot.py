@@ -63,21 +63,21 @@ async def on_ready():
     global admirals
     global lines
     await client.edit_profile(username=name)
+    reloadall()
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
-    reloadall()
     await send_hourlies(client, admirals, secr)
 
 @client.event
 async def on_message(message):
     global secr
     global admirals
-    #print(message.content.lower(), "friendship is magic" in message.content.lower())
     global lines
+
     if client.user in message.mentions and not message.channel.is_private:
         m = " ".join(message.content.split()[1:])
         if len(m) >= 1:
@@ -94,6 +94,10 @@ async def on_message(message):
             elif m.split()[0] == "secretary":
                 await menu(client, message, admirals, secr)
                 reloadall()
+            elif "friendship is magic" in message.content.lower():
+                embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
+                embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
+                await client.send_message(message.channel, embed=embeded)
             else:
                 await client.send_message(message.channel, random.choice(lines[name]))
         elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
