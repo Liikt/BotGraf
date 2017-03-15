@@ -76,6 +76,7 @@ async def on_ready():
 async def on_message(message):
     global secr
     global admirals
+    #print(message.content.lower(), "friendship is magic" in message.content.lower())
     global lines
     if client.user in message.mentions and not message.channel.is_private:
         m = " ".join(message.content.split()[1:])
@@ -95,10 +96,10 @@ async def on_message(message):
                 reloadall()
             else:
                 await client.send_message(message.channel, random.choice(lines[name]))
-        elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
-            await client.send_message(message.channel, "AND MAGIC IS HERESY!")
         elif not message.channel.is_private:
             await client.send_message(message.channel, random.choice(lines[name]))
+    elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
+        await client.send_message(message.channel, "AND MAGIC IS HERESY!")
 
 
 client.run(key)
