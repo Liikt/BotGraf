@@ -96,10 +96,16 @@ async def on_message(message):
                 reloadall()
             else:
                 await client.send_message(message.channel, random.choice(lines[name]))
+        elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
+            embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
+            embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
+            await client.send_message(message.channel, embed=embeded)
         elif not message.channel.is_private:
             await client.send_message(message.channel, random.choice(lines[name]))
     elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
-        await client.send_message(message.channel, "AND MAGIC IS HERESY!")
+        embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
+        embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
+        await client.send_message(message.channel, embed=embeded)
 
 
 client.run(key)
