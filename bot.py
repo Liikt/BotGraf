@@ -95,9 +95,9 @@ async def on_message(message):
                 reloadall()
             else:
                 await client.send_message(message.channel, random.choice(lines[name]))
-        elif "friendship is magic" in message.content.lower():
+        elif "friendship is magic" in message.content.lower() and not message.channel.is_private:
             await client.send_message(message.channel, "AND MAGIC IS HERESY!")
-        else:
+        elif not message.channel.is_private:
             await client.send_message(message.channel, random.choice(lines[name]))
 
 
