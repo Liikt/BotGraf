@@ -65,6 +65,7 @@ async def send_hourlies(client, admirals, secr):
                 if admiral not in visited and admirals[admiral]["Enabled"] == True and not m is None \
                     and (m.status == discord.Status.online or m.status == discord.Status.idle):
                     
+                    visited.append(admiral)
                     t = (int(admirals[admiral]["Offset"].split(":")[0])+gmtime(time()).tm_hour)%24
                     user = s.get_member(admiral)
 
