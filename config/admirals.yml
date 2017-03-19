@@ -8,11 +8,16 @@
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Commandant Teste
+'142122081142702080':
+  Enabled: true
+  Offset: '-7:1'
+  Secretary: ''
+  Shipfu: Iowa
 '177272994400305153':
   Enabled: true
-  Offset: '-4:0'
-  Secretary: https://worldofwarships-na.gcdn.co/dcont/fb/image/de16eeae-2cef-11e6-9c02-d89d6715223c.jpg
-  Shipfu: Haruna
+  Offset: -4:-1
+  Secretary: ''
+  Shipfu: Prinz Eugen
 '194178693113839618':
   Enabled: true
   Offset: '1:0'
@@ -23,6 +28,11 @@
   Offset: '1:0'
   Secretary: https://cdn.discordapp.com/attachments/285537911414325249/290168501212020736/eyJ1cmwiOiJodHRwczovL3NhZmVib29ydS5vcmcvaW1hZ2VzLzE5NDQvODZmMzY1ZWViYmMwZGVjNzQxZTc3OWYyY2FjZGU5N2Q0Nzk4ZTg0My5qcGcifQ.jpg
   Shipfu: Yamato
+'200686463552061440':
+  Enabled: true
+  Offset: '1:0'
+  Secretary: 'https://images.discordapp.net/.eJwFwVsSgyAMAMC7cAAIARL0NuFRtKPFEfzq9O7d_arnPtSqtjmvsRpT9pH7XfSY_ZZWdeu9HVWufejcTyNzSt7O-pnDIFPEJWKI6H0gBm9wcRAsW7IuBgrk0Dh2IYEVX4UcsWQCZGafIBaJnBhqenkB_b6a-v0B1OIqhg.EN-P6jlacK2gmRyQEKb-RvI13FA?width=501&height=668'
+  Shipfu: Musashi
 '98201428434104320':
   Enabled: true
   Offset: '-4:0'
