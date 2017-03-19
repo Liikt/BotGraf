@@ -19,7 +19,8 @@ def reloadsecr():
     try:
         with open(ROOT_DIR + os.sep + "config" + os.sep + "secretary.yml", "r") as f:
             secr = yaml.load(f)
-    except:
+    except Exception as e:
+        print(e)
         with open(ROOT_DIR + os.sep + "config" + os.sep + "secretary.yml", "w"):
             pass
 
@@ -28,7 +29,8 @@ def reloadlines():
     try:
         with open(ROOT_DIR + os.sep + "config" + os.sep + "lines.yml", "r") as f:
             lines = yaml.load(f)
-    except:
+    except Exception as e:
+        print(e)
         with open(ROOT_DIR + os.sep + "config" + os.sep + "lines.yml", "w"):
             pass
 
@@ -37,7 +39,8 @@ def reloadadmirals():
     try:
         with open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "r") as f:
             admirals = yaml.load(f)
-    except:
+    except Exception as e:
+        print(e)
         with open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "w"):
             pass
 
