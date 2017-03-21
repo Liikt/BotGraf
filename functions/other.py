@@ -56,8 +56,11 @@ async def xkcd(client, message):
         r = requests.get("https://xkcd.com/"+str(num))
     if r.status_code == 200:
         addr = r.text.split("(for hotlinking/embedding): ")[1].split("\n")[0]
+        alt = r.text.split(addr.replace("https:", "") + '" title="')[1].split('" alt=')[0]
+        alt.replace("&#39;", "'")
     if len(addr) > 0:
         embeded = discord.Embed(description="<@"+message.author.id+">", color=discord.Colour(0x00FF00)).set_image(url=addr)
+        embeded.set_footer(text="Alt Text: " + alt)
         await client.send_message(message.channel, embed=embeded)
     else:
         embeded = discord.Embed(description="<@"+message.author.id+"> I couldn't with any pictures :X", color=discord.Colour(0xFF0000))
