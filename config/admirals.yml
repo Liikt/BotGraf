@@ -3,6 +3,11 @@
   Offset: '-4:0'
   Secretary: https://danbooru.donmai.us/data/__graf_zeppelin_kantai_collection_drawn_by_karo_chan__fcb7369f4b570df6771143a4972a960e.png
   Shipfu: Graf Zeppelin
+'138149441335984133':
+  Enabled: true
+  Offset: '20:0'
+  Secretary: 'https://cdn.discordapp.com/attachments/293520001007091712/293520024407113728/7cfdecd95f8dca13ff95089217311.jpg'
+  Shipfu: Haruna
 '141366245399330816':
   Enabled: true
   Offset: '-4:0'
@@ -15,9 +20,9 @@
   Shipfu: Iowa
 '177272994400305153':
   Enabled: true
-  Offset: -4:-1
-  Secretary: ''
-  Shipfu: Prinz Eugen
+  Offset: '-4:0'
+  Secretary: https://images-ext-1.discordapp.net/.eJwFwVEOwiAMANC78F8qmDG322BbGAaBAGYfZnffe3_161nt6pizjR3xrD1zDafv40htQPE6EhdNFZlqmRjemL4-CrIYJ-IFLEkAY8TBRg8L_NrYrWax9kn606K6buWKIPA.HesUvdlVZgmGb9wCrsBuCehPzH0?width=339&height=677
+  Shipfu: Haruna (fog)
 '194178693113839618':
   Enabled: true
   Offset: '1:0'
@@ -31,10 +36,10 @@
 '200686463552061440':
   Enabled: true
   Offset: '1:0'
-  Secretary: 'https://images.discordapp.net/.eJwFwVsSgyAMAMC7cAAIARL0NuFRtKPFEfzq9O7d_arnPtSqtjmvsRpT9pH7XfSY_ZZWdeu9HVWufejcTyNzSt7O-pnDIFPEJWKI6H0gBm9wcRAsW7IuBgrk0Dh2IYEVX4UcsWQCZGafIBaJnBhqenkB_b6a-v0B1OIqhg.EN-P6jlacK2gmRyQEKb-RvI13FA?width=501&height=668'
+  Secretary: https://images.discordapp.net/.eJwFwVsSgyAMAMC7cAAIARL0NuFRtKPFEfzq9O7d_arnPtSqtjmvsRpT9pH7XfSY_ZZWdeu9HVWufejcTyNzSt7O-pnDIFPEJWKI6H0gBm9wcRAsW7IuBgrk0Dh2IYEVX4UcsWQCZGafIBaJnBhqenkB_b6a-v0B1OIqhg.EN-P6jlacK2gmRyQEKb-RvI13FA?width=501&height=668
   Shipfu: Musashi
 '98201428434104320':
   Enabled: true
   Offset: '-4:0'
-  Secretary: https://pbs.twimg.com/media/CODSVZBXAAAQiUV.jpg:large
-  Shipfu: Musashi
+  Secretary: 'https://images-ext-1.discordapp.net/.eJwVyk0OgjAQQOG7sNIFM5a_RhJjoktPMZYKY0tL6AAL493F7fveJ1tmn7XZIDK1iCv3wYpYBRs7JgjRxOjYwl7RUTDRe4s8Um8TllhqvHEaaTYODg8KQgz3_2KEYzjCa_EeVHPWTa3hPfU425XTTuhJbBJMhrzNJeYbdzLkXdwC6vJ0Nc9LcVKVKlStdNWoOvv-APBcOVo.ac4QKmyrs0nRK_p7zRYL5USZLAk'
+  Shipfu: Bismarck
