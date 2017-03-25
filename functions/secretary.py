@@ -172,7 +172,11 @@ async def addsecretary(client, message, admirals, secr):
             
     
     await client.send_message(message.channel, "<@"+message.author.id+"> ```If you want to set (or change in the future) a picture for your secretary message @Liikt.\nType anything to continue.```")
-    await client.wait_for_message(channel=message.channel,author=message.author)
+    
+    try:
+        await client.wait_for_message(timeout=5, channel=message.channel,author=message.author)
+    except asyncio.TimeoutError:
+        pass
 
     shipfu = tmp_list[int(msg.content)-1]
     admirals[client_id] = dict()
