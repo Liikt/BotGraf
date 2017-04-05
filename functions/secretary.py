@@ -52,20 +52,32 @@ def reloadall():
     reloadlines()
     reloadadmirals()
 
-async def send_hourlies(client, admirals, secr):
+async def send_hourlies(client):
+    global secr
+    global admirals
+    global lines
+
     first = 60-gmtime(time()).tm_min
     t = gmtime(time()).tm_hour
+
     syslog("I'm going to send the first batch in " + str(first) + " minutes!")
+    
     await asyncio.sleep(first*60)
+    
     while t == gmtime(time()).tm_hour:
         await asyncio.sleep(10)
+    
     while True:
         reloadall()
         visited = []
+        
+        print(admirals)
+
         for admiral in admirals.keys():
             for s in client.servers:
                 m = s.get_member(admiral)
-                if admiral not in visited and admirals[admiral]["Enabled"] == True and not m is None \
+    
+                if admiral == '194178693113839618' and admiral not in visited and admirals[admiral]["Enabled"] == True and not m is None \
                     and (m.status == discord.Status.online or m.status == discord.Status.idle):
                     
                     visited.append(admiral)
@@ -78,6 +90,7 @@ async def send_hourlies(client, admirals, secr):
                     if admirals[admiral]["Secretary"] != "":
                         embeded = discord.Embed(color=discord.Colour(0xe67e22))
                         embeded.set_image(url=admirals[admiral]["Secretary"])
+    
                         try:
                             await client.send_message(user, embed=embeded)
                         except:
@@ -88,6 +101,7 @@ async def send_hourlies(client, admirals, secr):
                     await client.send_message(user, embed=embeded)
 
                     syslog(str(m) +  " -> " + admirals[admiral]["Shipfu"] + " at " + str(t) + " => " + secr[admirals[admiral]["Shipfu"]][t])
+    
         await asyncio.sleep(60*60)
 
 async def addsecretary(client, message, admirals, secr):
@@ -270,6 +284,7 @@ async def changesettings(client, message, admirals, secr):
 
         shipfu = tmp_list[int(msg.content)-1]
         admirals[client_id]["Shipfu"] = shipfu
+        admirals[client_id]["Secretary"] = ''
 
         admirals_file = open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "w")
         yaml.dump(admirals, admirals_file, default_flow_style=False)

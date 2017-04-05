@@ -73,7 +73,7 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
-    await send_hourlies(client, admirals, secr)
+    await send_hourlies(client)
 
 @client.event
 async def on_message(message):
