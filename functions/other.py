@@ -11,7 +11,8 @@ from time import gmtime, time, sleep
 name = "Graf Zeppelin"
 
 async def debug(client, message):
-    await client.send_message(message.channel, " ".join(message.content.split()[2:]))
+    m = "\u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0435 \u0418\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435"
+    await client.send_message(message.channel, m)
 
 async def evaluate(client, message):
     org = "".join(message.content.split()[2:])

@@ -88,8 +88,8 @@ async def on_message(message):
                 await evaluate(client, message)
             elif m.split()[0] == "help":
                 await help(client, message)
-            # elif m.split()[0] == "debug":
-            #     await debug(client, message)
+            #elif m.split()[0] == "debug":
+            #    await debug(client, message)
             elif m.split()[0] == "xkcd":
                 await xkcd(client, message)
             elif m.split()[0] == "zalgo":

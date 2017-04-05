@@ -1,2 +1,3 @@
 #!/bin/bash
-pkill pyhton && ./daemonize
+pkill pyhton
+./daemonize
