@@ -93,20 +93,10 @@ async def on_message(message):
                 #    await debug(client, message)
                 elif m.split()[0] == "xkcd":
                     await xkcd(client, message)
-                elif m.split()[0] == "zalgo":
-                    await zalgo(client, message)
                 elif m.split()[0] == "secretary":
                     await menu(client, message, admirals, secr)
                     reloadall()
                 else:
                     await client.send_message(message.channel, random.choice(lines[name]))
-        if "friendship is magic" in message.content.lower():
-            embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
-            embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
-            await client.send_message(message.channel, embed=embeded)
-        if "gib" in message.content.lower():
-            await client.send_message(message.channel, ":flag_gr:")
-        if "MURICA" in message.content:
-            await client.send_message(message.channel, ":flag_us:")
-
+                    
 client.run(key)
