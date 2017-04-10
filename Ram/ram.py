@@ -48,7 +48,7 @@ async def on_message(message):
             embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
             embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
             await client.send_message(message.channel, embed=embeded)
-        if "nuu" inmessage.content.lower():
+        if "nuu" in message.content.lower():
             await client.send_message(message.channel, ":flag_de:") 
         if "MURICA" in message.content:
             await client.send_message(message.channel, ":flag_us:")
