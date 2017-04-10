@@ -13,6 +13,11 @@
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Commandant Teste
+'142122081142702080':
+  Enabled: true
+  Offset: '17:0'
+  Secretary: ''
+  Shipfu: Saratoga
 '177272994400305153':
   Enabled: true
   Offset: '20:0'
@@ -33,8 +38,13 @@
   Offset: '1:0'
   Secretary: https://images.discordapp.net/.eJwFwVsSgyAMAMC7cAAIARL0NuFRtKPFEfzq9O7d_arnPtSqtjmvsRpT9pH7XfSY_ZZWdeu9HVWufejcTyNzSt7O-pnDIFPEJWKI6H0gBm9wcRAsW7IuBgrk0Dh2IYEVX4UcsWQCZGafIBaJnBhqenkB_b6a-v0B1OIqhg.EN-P6jlacK2gmRyQEKb-RvI13FA?width=501&height=668
   Shipfu: Musashi
+'244557089710669836':
+  Enabled: true
+  Offset: '-6:0'
+  Secretary: ''
+  Shipfu: I-19
 '98201428434104320':
   Enabled: true
   Offset: '20:0'
   Secretary: ''
-  Shipfu: Iowa
+  Shipfu: Taihou

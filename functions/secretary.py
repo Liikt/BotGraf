@@ -61,23 +61,21 @@ async def send_hourlies(client):
     t = gmtime(time()).tm_hour
 
     syslog("I'm going to send the first batch in " + str(first) + " minutes!")
-    
+    print("Sending in", first, "minutes") 
     await asyncio.sleep(first*60)
     
     while t == gmtime(time()).tm_hour:
-        await asyncio.sleep(10)
+        await asyncio.sleep(1)
     
     while True:
         reloadall()
         visited = []
         
-        print(admirals)
-
         for admiral in admirals.keys():
             for s in client.servers:
                 m = s.get_member(admiral)
     
-                if admiral == '194178693113839618' and admiral not in visited and admirals[admiral]["Enabled"] == True and not m is None \
+                if admiral not in visited and admirals[admiral]["Enabled"] == True and not m is None \
                     and (m.status == discord.Status.online or m.status == discord.Status.idle):
                     
                     visited.append(admiral)
