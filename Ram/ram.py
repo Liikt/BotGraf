@@ -22,7 +22,6 @@ client = discord.Client()
 @client.event
 async def on_ready():
     await client.edit_profile(username=name)
-    reloadall()
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
@@ -44,6 +43,7 @@ async def on_message(message):
                     await zalgo(client, message)
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
+    
         if "friendship is magic" in message.content.lower():
             embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
             embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
