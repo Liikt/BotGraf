@@ -10,7 +10,6 @@ from utils.utils import *
 from utils.secret import key
 from functions.other import *
 from functions.secretary import *
-from functions.zalgo import *
 from time import gmtime, time, sleep
 from subprocess import Popen
 
@@ -65,7 +64,6 @@ async def on_ready():
     global secr
     global admirals
     global lines
-    await send_hourlies(client)
     await client.edit_profile(username=name)
     reloadall()
     print('Logged in as')
@@ -74,6 +72,7 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
+    await send_hourlies(client)
 
 @client.event
 async def on_message(message):

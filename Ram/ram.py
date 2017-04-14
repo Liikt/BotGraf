@@ -56,5 +56,6 @@ async def on_message(message):
             await client.send_message(message.channel, ":eagle:")
         if "gib" in message.content.lower():
             await client.send_message(message.channel, ":flag_gr:")
-
+        if "balans" in message.content.lower():
+            await client.send_message(message.channel, ":flag_ru:")
 client.run(key)
