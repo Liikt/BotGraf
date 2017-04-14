@@ -13,16 +13,11 @@
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Commandant Teste
-'142122081142702080':
-  Enabled: true
-  Offset: '17:0'
-  Secretary: ''
-  Shipfu: Saratoga
 '177272994400305153':
   Enabled: true
-  Offset: '20:0'
-  Secretary: https://myanimelist.cdn-dena.com/images/characters/6/222713.jpg
-  Shipfu: Iona (fog)
+  Offset: -4:-1
+  Secretary: ''
+  Shipfu: Takao (fog)
 '194178693113839618':
   Enabled: true
   Offset: '2:0'
@@ -47,4 +42,4 @@
   Enabled: true
   Offset: '20:0'
   Secretary: ''
-  Shipfu: Taihou
+  Shipfu: Saratoga
