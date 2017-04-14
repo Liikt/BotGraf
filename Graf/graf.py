@@ -89,7 +89,7 @@ async def on_message(message):
                 elif m.split()[0] == "help":
                     await help(client, message)
                 #elif m.split()[0] == "debug":
-                #    await debug(client, message)
+                #    await debug_secr(client, message)
                 elif m.split()[0] == "xkcd":
                     await xkcd(client, message)
                 elif m.split()[0] == "secretary":
