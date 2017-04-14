@@ -10,7 +10,6 @@ from utils.utils import *
 from utils.secret import key
 from functions.other import *
 from functions.secretary import *
-from functions.zalgo import *
 from time import gmtime, time, sleep
 from subprocess import Popen
 
