@@ -9,6 +9,7 @@ import os
 from utils.utils import *
 from utils.secret import key
 from functions.other import *
+from functions.shitpost import *
 from functions.zalgo import *
 from time import gmtime, time, sleep
 from subprocess import Popen
@@ -43,19 +44,14 @@ async def on_message(message):
                     await zalgo(client, message)
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
-    
-        if "friendship is magic" in message.content.lower():
-            embeded = discord.Embed(description="AND MAGIC IS HERESY!", color=discord.Colour(0x8958A7))
-            embeded.set_image(url="https://cdn.discordapp.com/attachments/285537911414325249/291701362218237962/MagicIsHeresy.jpg")
-            await client.send_message(message.channel, embed=embeded)
-        if "nuu" in message.content.lower():
-            await client.send_message(message.channel, ":flag_de:") 
-        if "MURICA" in message.content:
-            await client.send_message(message.channel, ":flag_us:")
-        if "FUCK YEAH" in message.content:
-            await client.send_message(message.channel, ":eagle:")
-        if "gib" in message.content.lower():
-            await client.send_message(message.channel, ":flag_gr:")
-        if "balans" in message.content.lower():
-            await client.send_message(message.channel, ":flag_ru:")
+        await check_shitpost(client, message)
+    # elif message.author.id == '194178693113839618':
+    #     if message.content == "delete":
+    #         async for mes in client.logs_from(message.channel):
+    #             try:
+    #                 await client.delete_message(mes)
+    #             except:
+    #                 pass
+    #     else:
+    #         print("\n".join([x["url"] for x in message.attachments]))
 client.run(key)
