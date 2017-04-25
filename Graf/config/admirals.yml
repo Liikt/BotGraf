@@ -1,27 +1,22 @@
 '126898852241473537':
   Enabled: true
   Offset: '-4:0'
-  Secretary: https://danbooru.donmai.us/data/__graf_zeppelin_kantai_collection_drawn_by_karo_chan__fcb7369f4b570df6771143a4972a960e.png
-  Shipfu: Bismarck
+  Secretary: ''
+  Shipfu: Graf Zeppelin
 '138149441335984133':
-  Enabled: true
+  Enabled: false
   Offset: '20:0'
-  Secretary: https://cdn.discordapp.com/attachments/293520001007091712/293520024407113728/7cfdecd95f8dca13ff95089217311.jpg
+  Secretary: ''
   Shipfu: Haruna
 '141366245399330816':
   Enabled: true
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Commandant Teste
-'177272994400305153':
-  Enabled: true
-  Offset: -4:-1
-  Secretary: https://cdn.discordapp.com/attachments/285537911414325249/302491729825628160/unknown.png
-  Shipfu: Takao (fog)
 '194178693113839618':
   Enabled: true
   Offset: '2:0'
-  Secretary: https://40.media.tumblr.com/9e85ad56dc4d02b41ca1d8c1df347b6e/tumblr_o2wks0eTzn1t30u54o1_500.png
+  Secretary: http://i3.kym-cdn.com/photos/images/original/001/094/875/3b0.jpg
   Shipfu: Iowa
 '198433755671691264':
   Enabled: true
@@ -30,16 +25,16 @@
   Shipfu: Yamato
 '200686463552061440':
   Enabled: true
-  Offset: '1:0'
-  Secretary: https://images.discordapp.net/.eJwFwVsSgyAMAMC7cAAIARL0NuFRtKPFEfzq9O7d_arnPtSqtjmvsRpT9pH7XfSY_ZZWdeu9HVWufejcTyNzSt7O-pnDIFPEJWKI6H0gBm9wcRAsW7IuBgrk0Dh2IYEVX4UcsWQCZGafIBaJnBhqenkB_b6a-v0B1OIqhg.EN-P6jlacK2gmRyQEKb-RvI13FA?width=501&height=668
-  Shipfu: Musashi
+  Offset: '2:0'
+  Secretary: https://cdn.discordapp.com/attachments/248136239000190976/305086818725003265/zuihou_kantai_collection_drawn_by_miyabi_miyabi__ab4b249132e32bb94ac5c9696fc53fdc.png
+  Shipfu: Zuihou
 '244557089710669836':
   Enabled: true
   Offset: '-6:0'
   Secretary: ''
-  Shipfu: I-19
+  Shipfu: Kamikaze
 '98201428434104320':
   Enabled: true
   Offset: '20:0'
   Secretary: ''
-  Shipfu: Saratoga
+  Shipfu: Taigei
