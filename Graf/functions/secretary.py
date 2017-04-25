@@ -382,14 +382,16 @@ async def changesettings(client, message, admirals, secr):
                 except discord.errors.HTTPException as e:
                     await client.send_message(user, "```I couldn't get the picture. Please either send me a real link or another one! \n\nType abort to exit```")
                     continue
+                except Exeption as e:
+                    syslog("Couldn' set picture" + str(e))
                 
-                answ = await client.wait_for_message(author=message.author).content
-        
+                ret = await client.wait_for_message(author=message.author)
+                answ = ret.content       
             admirals[client_id]["Secretary"] = link.content
             admirals_file = open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "w")
             yaml.dump(admirals, admirals_file, default_flow_style=False)
             admirals_file.close()
-            await client.send_message(message.channel, "I successfully changed your picture.")        
+            await client.send_message(user, "I successfully changed your picture.")        
 
         else:
             await client.send_message(message.channel, "Please use a Server")
