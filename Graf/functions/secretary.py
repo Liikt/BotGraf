@@ -315,7 +315,7 @@ async def changesettings(client, message, admirals, secr):
 
         await client.send_message(message.channel, "<@"+message.author.id+"> I assigned " + shipfu + " as your secretary ship.")
 
-    elif int(msg.content) == 3:
+    elif int(msg.content) == 4:
         await delete_last_message(client, message, "<@"+message.author.id+"> \n```What is your current time?\nThis is needed to determine what hourly notification is appropiate.\
         \n(Please use the format hh:mm so i.e. 7:07pm => 19:07)\
         \n\nType abort to exit```")
@@ -350,7 +350,7 @@ async def changesettings(client, message, admirals, secr):
         nextline = str(t)+"00" if t > 9 else "0" + str(t) + "00"
         await client.send_message(message.channel, "<@"+message.author.id+"> You will recieve the next line at " + nextline)
 
-    elif int(msg.content) == 4:
+    elif int(msg.content) == 3:
         admirals[client_id]["Enabled"] = admirals[client_id]["Enabled"] == False
         admirals_file = open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "w")
         yaml.dump(admirals, admirals_file, default_flow_style=False)
