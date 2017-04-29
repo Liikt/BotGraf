@@ -55,7 +55,7 @@ def reloadall():
 async def debug_secr(client, message):
     global admirals
     global secr
-    reloadall()
+    reloadadmirals()
     admiral = '194178693113839618'
     t = (int(admirals[admiral]["Offset"].split(":")[0])+gmtime(time()).tm_hour)%24
     user = message.server.get_member(admiral)
@@ -91,7 +91,7 @@ async def send_hourlies(client):
         await asyncio.sleep(1)
     
     while True:
-        reloadall()
+        reloadadmirals()
         visited = []
         
         for admiral in admirals.keys():

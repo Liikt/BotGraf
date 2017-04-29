@@ -64,14 +64,23 @@ async def on_ready():
     global secr
     global admirals
     global lines
+    
     await client.edit_profile(username=name)
     reloadall()
+    
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
-    await client.change_presence(game=discord.Game(name=game))
+    while:
+        try:
+            await client.change_presence(game=discord.Game(name=game))
+    	    break
+        except:
+            await sleep(1)
+            pass
     print("Changed status to '" + game + "'")
     print('------')
+    
     await send_hourlies(client)
 
 @client.event
