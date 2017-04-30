@@ -19,6 +19,7 @@ name = "Graf Zeppelin"
 game = "@{} help for help".format(name)
 client = discord.Client()
 secr, lines, admirals = {}, {}, {}
+starttime = time()
 
 
 def reloadsecr():
@@ -64,7 +65,8 @@ async def on_ready():
     global secr
     global admirals
     global lines
-    
+    global starttime
+
     await client.edit_profile(username=name)
     reloadall()
     
@@ -91,13 +93,19 @@ async def on_message(message):
                     await evaluate(client, message)
                 elif m.split()[0] == "help":
                     await help(client, message)
-                #elif m.split()[0] == "debug":
-                #    await debug_secr(client, message)
                 elif m.split()[0] == "xkcd":
                     await xkcd(client, message)
                 elif m.split()[0] == "secretary":
                     await menu(client, message, admirals, secr)
                     reloadall()
+                elif m.split()[0] == "uptime":
+                    cur = time()
+                    hour = str(gmtime(cur-starttime).tm_hour)
+                    minute = str(gmtime(cur-starttime).tm_min)
+                    await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
+                     + hour + " hours and " + minute + " minutes.")
+                #elif m.split()[0] == "debug":
+                #    await debug_secr(client, message)
                 else:
                     await client.send_message(message.channel, random.choice(lines[name]))
                     

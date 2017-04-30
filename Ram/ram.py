@@ -42,6 +42,12 @@ async def on_message(message):
                 #    await debug(client, message)
                 elif m.split()[0] == "zalgo":
                     await zalgo(client, message)
+                elif m.split()[0] == "uptime":
+                    cur = time()
+                    hour = str(gmtime(cur-starttime).tm_hour)
+                    minute = str(gmtime(cur-starttime).tm_min)
+                    await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
+                     + hour + " hours and " + minute + " minutes.")
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
         await check_shitpost(client, message)
