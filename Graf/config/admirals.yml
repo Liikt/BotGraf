@@ -18,6 +18,11 @@
   Offset: '2:0'
   Secretary: http://i3.kym-cdn.com/photos/images/original/001/094/875/3b0.jpg
   Shipfu: Iowa
+'196194242836561920':
+  Enabled: true
+  Offset: '3:0'
+  Secretary: ''
+  Shipfu: Kongou
 '198433755671691264':
   Enabled: true
   Offset: '2:0'
@@ -28,6 +33,11 @@
   Offset: '2:0'
   Secretary: https://cdn.discordapp.com/attachments/248136239000190976/305086818725003265/zuihou_kantai_collection_drawn_by_miyabi_miyabi__ab4b249132e32bb94ac5c9696fc53fdc.png
   Shipfu: Zuihou
+'273163799492689931':
+  Enabled: true
+  Offset: '-5:0'
+  Secretary: ''
+  Shipfu: Musashi
 '98201428434104320':
   Enabled: true
   Offset: '20:0'
