@@ -82,7 +82,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     
-    while:
+    while True:
         try:
             await client.change_presence(game=discord.Game(name=game))
             break
