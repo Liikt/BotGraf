@@ -80,6 +80,8 @@ async def send_hourlies(client):
     global admirals
     global lines
 
+    reloadall()
+
     first = 60-gmtime(time()).tm_min
     t = gmtime(time()).tm_hour
 
