@@ -124,8 +124,9 @@ async def send_hourlies(client):
                     await client.send_message(user, embed=embeded)
 
                     syslog(str(m) +  " -> " + admirals[admiral]["Shipfu"] + " at " + str(t) + " => " + secr[admirals[admiral]["Shipfu"]][t])
-    
-        await asyncio.sleep(60*60)
+  
+        first = 60-gmtime(time()).tm_min  
+        await asyncio.sleep(first*60)
 
 async def addsecretary(client, message, admirals, secr):
     if message.author.id in list(admirals.keys()):
