@@ -19,6 +19,7 @@ ROOT_DIR = os.getcwd()
 name = "Ram"
 game = "@{} help for help".format(name)
 client = discord.Client()
+starttime = 0
 
 @client.event
 async def on_ready():
@@ -26,12 +27,14 @@ async def on_ready():
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
+    starttime = time()
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
 
 @client.event
 async def on_message(message):
+    global starttime
     if not message.channel.is_private:
         if client.user in message.mentions:
             m = " ".join(message.content.split()[1:])
@@ -43,11 +46,12 @@ async def on_message(message):
                 elif m.split()[0] == "zalgo":
                     await zalgo(client, message)
                 elif m.split()[0] == "uptime":
-                    cur = time()
-                    hour = str(gmtime(cur-starttime).tm_hour)
-                    minute = str(gmtime(cur-starttime).tm_min)
-                    await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
-                     + hour + " hours and " + minute + " minutes.")
+                    cur = time() - starttime
+                    print(cur)
+                    #hour = str(int((cur-starttime)/(60*60)))
+                    #minute = str(int((cur-starttime-int(hour))/60))
+                    #await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
+                    # + hour + " hours and " + minute + " minutes.")
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
         await check_shitpost(client, message)
