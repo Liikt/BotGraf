@@ -99,6 +99,7 @@ async def on_message(message):
     global secr
     global admirals
     global lines
+    global starttime
 
     if not message.channel.is_private:
         if client.user in message.mentions:
@@ -146,8 +147,8 @@ async def on_message(message):
 
                 elif m.split()[0] == "uptime":
                     cur = time()
-                    hour = str(gmtime(cur-starttime).tm_hour)
-                    minute = str(gmtime(cur-starttime).tm_min)
+                    hour = str(int((cur-starttime)/(60*60)))
+                    minute = str(int((cur-starttime-int(hour))/60))
                     await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
                      + hour + " hours and " + minute + " minutes.")
                 
