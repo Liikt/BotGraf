@@ -23,6 +23,7 @@ starttime = 0
 
 @client.event
 async def on_ready():
+    global starttime
     await client.edit_profile(username=name)
     print('Logged in as')
     print(client.user.name)
@@ -46,12 +47,11 @@ async def on_message(message):
                 elif m.split()[0] == "zalgo":
                     await zalgo(client, message)
                 elif m.split()[0] == "uptime":
-                    cur = time() - starttime
-                    print(cur)
-                    #hour = str(int((cur-starttime)/(60*60)))
-                    #minute = str(int((cur-starttime-int(hour))/60))
-                    #await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
-                    # + hour + " hours and " + minute + " minutes.")
+                    cur = time()
+                    hour = str(int((cur-starttime)/(60*60)))
+                    minute = str(int((cur-starttime-int(hour))/60))
+                    await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
+                     + hour + " hours and " + minute + " minutes.")
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
         await check_shitpost(client, message)
