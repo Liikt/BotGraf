@@ -26,7 +26,7 @@ async def greet(client):
     for s in client.servers:
         if s.id == '283066637928890379':
             for c in s.channels:
-                if not c.type == discord.ChannelType.voice and c.name.lower() in ['general', 'coding_with_graf', 'nadeko-free_zone', 'the_wizards_lair', 'fishing_pond', 'rem_testing', 'talking_with_nadeko', 'warfare']:
+                if not c.type == discord.ChannelType.voice and c.name.lower() in ['pestcontrol']:
                     await client.send_message(c, 'I HAVE RETURNED ONCE AGAIN TO BRING CANCER AND MEMES!')
 
 @client.event
