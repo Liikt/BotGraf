@@ -21,6 +21,17 @@ game = "@{} help for help".format(name)
 client = discord.Client()
 starttime = 0
 
+
+async def greet(client):
+    for s in client.servers:
+        if s.id == '283066637928890379':
+            for c in s.channels:
+                if not c.type == discord.ChannelType.voice \
+                    and c.name.lower() in ['general', 'coding_with_graf', 'nadeko-free_zone', \
+                    'the_wizards_lair', 'fishing_pond', 'rem_testing', 'talking_with_nadeko', 'warfare']:
+                    pass
+                    #await client.send_message(c, 'I HAVE RETURNED ONCE AGAIN TO BRING CANCER AND MEMES!')
+
 @client.event
 async def on_ready():
     global starttime
@@ -32,11 +43,17 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
+    await greet(client)
+
+@client.event
+async def on_reaction_add(reaction, user):
+    #print(reaction.emoji)
 
 @client.event
 async def on_message(message):
     global starttime
-    if not message.channel.is_private:
+    if not message.channel.is_private and not message.author.bot:
+        await client.add_reaction(message, '🐀')
         if client.user in message.mentions:
             m = " ".join(message.content.split()[1:])
             if len(m) >= 1:
