@@ -29,8 +29,7 @@ async def greet(client):
                 if not c.type == discord.ChannelType.voice \
                     and c.name.lower() in ['general', 'coding_with_graf', 'nadeko-free_zone', \
                     'the_wizards_lair', 'fishing_pond', 'rem_testing', 'talking_with_nadeko', 'warfare']:
-                    pass
-                    #await client.send_message(c, 'I HAVE RETURNED ONCE AGAIN TO BRING CANCER AND MEMES!')
+                    await client.send_message(c, 'I HAVE RETURNED ONCE AGAIN TO BRING CANCER AND MEMES!')
 
 @client.event
 async def on_ready():
