@@ -50,7 +50,8 @@ async def on_ready():
 async def on_message(message):
     global starttime
     if not message.channel.is_private and not message.author.bot:
-        await client.add_reaction(message, '🐀')
+        if message.channel.name.lower() in ['general', 'coding_with_graf', 'nadeko-free_zone', 'the_wizards_lair', 'fishing_pond', 'rem_testing', 'talking_with_nadeko', 'warfare']:
+            await client.add_reaction(message, '🐀')
         if client.user in message.mentions:
             m = " ".join(message.content.split()[1:])
             if len(m) >= 1:
