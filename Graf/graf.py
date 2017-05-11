@@ -102,7 +102,7 @@ async def on_message(message):
     global starttime
 
     if not message.channel.is_private:
-        if client.user in message.mentions:
+        if client.user in message.mentions and not message.author.bot:
             m = " ".join(message.content.split()[1:])
             
             if len(m) >= 1:
