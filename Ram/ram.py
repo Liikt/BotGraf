@@ -42,8 +42,8 @@ async def on_ready():
     print('------')
     await greet(client)
 
-@client.event
-async def on_reaction_add(reaction, user):
+#@client.event
+#async def on_reaction_add(reaction, user):
     #print(reaction.emoji)
 
 @client.event
