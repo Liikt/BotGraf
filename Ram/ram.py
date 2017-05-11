@@ -50,7 +50,7 @@ async def on_ready():
 async def on_message(message):
     global starttime
     if not message.channel.is_private and not message.author.bot:
-        if message.channel.name.lower() in ['pestcontrol']:
+        if message.channel.name.lower() in ['pestcontrol', 'dumb-bot-shit']:
             await client.add_reaction(message, '🐀')
         if client.user in message.mentions:
             m = " ".join(message.content.split()[1:])
