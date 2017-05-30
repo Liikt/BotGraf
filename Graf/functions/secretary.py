@@ -374,7 +374,7 @@ async def changesettings(client, message, admirals, secr):
                 link = await client.wait_for_message(timeout=60, author=message.author)
                 
                 if link is None or link.content == "exit":
-            		await client.send_message(user, "`Aborting!`")
+                    await client.send_message(user, "`Aborting!`")
                     return
                 
                 embeded = discord.Embed(color=discord.Colour(0xe67e22))
