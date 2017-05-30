@@ -186,7 +186,7 @@ async def addsecretary(client, message, admirals, secr):
             await delete_last_message(client, message)
             return
 
-        while msg.content.upper() != "N" and msg.content.upper() != "B" and not check(msg.content) and int(msg.content) - 1 not in range(len(tmp_list)):
+        while msg.content.upper()[0] != "N" and msg.content.upper()[0] != "B" and not check(msg.content) and int(msg.content) - 1 not in range(len(tmp_list)):
 
             await delete_last_message(client, message, "<@"+message.author.id+"> \n```Please choose one of the following shipfus:\n\t" \
                 + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + "\
@@ -198,9 +198,9 @@ async def addsecretary(client, message, admirals, secr):
                 await delete_last_message(client, message)
                 return 
         
-        if msg.content.upper() == "N":
+        if msg.content.upper()[0] == "N":
             list_count += 1
-        elif msg.content.upper() == "B":
+        elif msg.content.upper()[0] == "B":
             list_count -= 1
         elif int(msg.content)-1 in range(10):
             found = True
@@ -286,7 +286,7 @@ async def changesettings(client, message, admirals, secr):
                 await delete_last_message(client, message)
                 return
 
-            while msg.content.upper() != "N" and msg.content.upper() != "B" and not check(msg.content) and int(msg.content) - 1 not in range(len(tmp_list)):
+            while msg.content.upper()[0] != "N" and msg.content.upper()[0] != "B" and not check(msg.content) and int(msg.content) - 1 not in range(len(tmp_list)):
 
                 await delete_last_message(client, message, "<@"+message.author.id+"> \n```Please choose one of the following shipfus:\n\t" \
                     + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + "\
@@ -298,9 +298,9 @@ async def changesettings(client, message, admirals, secr):
                     await delete_last_message(client, message)
                     return 
             
-            if msg.content.upper() == "N":
+            if msg.content.upper()[0] == "N":
                 list_count += 1
-            elif msg.content.upper() == "B":
+            elif msg.content.upper()[0] == "B":
                 list_count -= 1
             elif int(msg.content)-1 in range(10):
                 found = True
@@ -373,7 +373,8 @@ async def changesettings(client, message, admirals, secr):
             while answ == "n":
                 link = await client.wait_for_message(timeout=60, author=message.author)
                 
-                if link.content == "exit":
+                if link is None or link.content == "exit":
+            		await client.send_message(user, "`Aborting!`")
                     return
                 
                 embeded = discord.Embed(color=discord.Colour(0xe67e22))
