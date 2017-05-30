@@ -139,7 +139,14 @@ async def addsecretary(client, message, admirals, secr):
     \n(Please use the format hh:mm so i.e. 7:07pm => 19:07)\
     \n\nType abort to exit```")
 
-    msg = await client.wait_for_message(channel=message.channel,author=message.author)
+    msg = ''
+    try:
+        msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+    except asyncio.TimeoutError:
+        await delete_last_message(client, message)
+        await client.send_message(user, "`Aborting becuase of timeout!`")
+        await sleep(5)
+        return
 
     if msg.content.lower() == "abort":
         await delete_last_message(client, message)
@@ -150,7 +157,14 @@ async def addsecretary(client, message, admirals, secr):
 
         await delete_last_message(client, message, "<@"+message.author.id+"> \n```Please use a real time or/or the format hh:mm (5:05pm => 15:05)\
             \n\nType abort to exit```")
-        msg = await client.wait_for_message(channel=message.channel,author=message.author)
+        msg = ''
+        try:
+            msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+        except asyncio.TimeoutError:
+            await delete_last_message(client, message)
+            await client.send_message(user, "`Aborting becuase of timeout!`")
+            await sleep(5)
+            return
             
         if msg.content.lower() == "abort":
             await delete_last_message(client, message)
@@ -180,7 +194,14 @@ async def addsecretary(client, message, admirals, secr):
             + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + \
             pagination + "\n\nType abort to exit```")
 
-        msg = await client.wait_for_message(channel=message.channel,author=message.author)
+        msg = ''
+        try:
+            msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+        except asyncio.TimeoutError:
+            await delete_last_message(client, message)
+            await client.send_message(user, "`Aborting becuase of timeout!`")
+            await sleep(5)
+            return
 
         if msg.content.lower() == "abort":
             await delete_last_message(client, message)
@@ -192,7 +213,14 @@ async def addsecretary(client, message, admirals, secr):
                 + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + "\
                 \n\t9. Next Page\n\t10. Page Back\n\nType abort to exit```")
 
-            msg = await client.wait_for_message(channel=message.channel,author=message.author)
+            msg = ''
+            try:
+                msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+            except asyncio.TimeoutError:
+                await delete_last_message(client, message)
+                await client.send_message(user, "`Aborting becuase of timeout!`")
+                await sleep(5)
+                return
 
             if msg.content.lower() == "abort":
                 await delete_last_message(client, message)
@@ -237,6 +265,8 @@ async def changesettings(client, message, admirals, secr):
     if not message.author.id in list(admirals.keys()):
         await client.send_message(message.channel, "<@"+message.author.id+"> You currently don't have a secretary assigned!")
         return
+
+    msg = ''
     
     info = admirals[message.author.id]
     enabled = "Enable notifcations" if info["Enabled"] == False else "Disable notifications"
@@ -246,7 +276,13 @@ async def changesettings(client, message, admirals, secr):
         \n\t2. Change the picture\
         \n\t3. " + enabled + "\
         \n\t4. Change the current time" + "```")
-    msg = await client.wait_for_message(channel=message.channel,author=message.author)
+    try:
+        msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+    except asyncio.TimeoutError:
+        await delete_last_message(client, message)
+        await client.send_message(user, "`Aborting becuase of timeout!`")
+        await sleep(5)
+        return
 
     while not check(msg.content) and int(msg.content)-1 not in range(4):
         await client.send_message(message.channel, "<@"+message.author.id+"> \n```Please choose one of these options:\
@@ -254,8 +290,15 @@ async def changesettings(client, message, admirals, secr):
             \n\t2. Change the picture\
             \n\t3. " + enabled  + "\
             \n\t4. Change the current time"+ "```")
-
-        msg = await client.wait_for_message(channel=message.channel,author=message.author)            
+        msg = ''
+        try:
+            msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+        except asyncio.TimeoutError:
+            await delete_last_message(client, message)
+            await client.send_message(user, "`Aborting becuase of timeout!`")
+            await sleep(5)
+            return
+       
 
     await delete_last_message(client, message)
     
@@ -280,7 +323,14 @@ async def changesettings(client, message, admirals, secr):
                 + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + \
                 pagination + "\n\nType abort to exit```")
 
-            msg = await client.wait_for_message(channel=message.channel,author=message.author)
+            msg = ''
+            try:
+                msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+            except asyncio.TimeoutError:
+                await delete_last_message(client, message)
+                await client.send_message(user, "`Aborting becuase of timeout!`")
+                await sleep(5)
+                return
 
             if msg.content.lower() == "abort":
                 await delete_last_message(client, message)
@@ -292,7 +342,14 @@ async def changesettings(client, message, admirals, secr):
                     + "\n\t".join([str(x+1) + ". " + y for x,y in enumerate(tmp_list)]) + "\
                     \n\t9. Next Page\n\t10. Page Back\n\nType abort to exit```")
 
-                msg = await client.wait_for_message(channel=message.channel,author=message.author)
+                msg = ''
+                try:
+                    msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+                except asyncio.TimeoutError:
+                    await delete_last_message(client, message)
+                    await client.send_message(user, "`Aborting becuase of timeout!`")
+                    await sleep(5)
+                    return
 
                 if msg.content.lower() == "abort":
                     await delete_last_message(client, message)
@@ -334,7 +391,14 @@ async def changesettings(client, message, admirals, secr):
 
             await delete_last_message(client, message, "<@"+message.author.id+"> \n```Please use a real time or/or the format hh:mm (5:05pm => 15:05)\
                 \n\nType abort to exit```")
-            msg = await client.wait_for_message(channel=message.channel,author=message.author)
+            msg = ''
+            try:
+                msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+            except asyncio.TimeoutError:
+                await delete_last_message(client, message)
+                await client.send_message(user, "`Aborting becuase of timeout!`")
+                await sleep(5)
+                return
                 
             if msg.content.lower() == "abort":
                 await delete_last_message(client, message)
@@ -371,7 +435,13 @@ async def changesettings(client, message, admirals, secr):
         
             await client.send_message(user, "`Please give me a link the the Picture you want to set. (You have 60 seconds, it also can take a bit to load. >.<)`")
             while answ == "n":
-                link = await client.wait_for_message(timeout=60, author=message.author)
+                try:
+                    link = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+                except asyncio.TimeoutError:
+                    await delete_last_message(client, message)
+                    await client.send_message(user, "`Aborting becuase of timeout!`")
+                    await sleep(5)
+                    return
                 
                 if link is None or link.content == "exit":
                     await client.send_message(user, "`Aborting!`")
@@ -387,9 +457,19 @@ async def changesettings(client, message, admirals, secr):
                     await client.send_message(user, "```I couldn't get the picture. Please either send me a real link or another one! \n\nType abort to exit```")
                     continue
                 except Exeption as e:
-                    syslog("Couldn' set picture" + str(e))
+                    syslog("Couldn't set picture " + str(e))
+                    await client.send(user, "Couldn't set picture " + str(e))
+                    return
                 
-                ret = await client.wait_for_message(author=message.author)
+                ret = ''
+                try:
+                    ret = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+                except asyncio.TimeoutError:
+                    await delete_last_message(client, message)
+                    await client.send_message(user, "`Aborting becuase of timeout!`")
+                    await sleep(5)
+                    return
+                    
                 answ = ret.content       
             admirals[client_id]["Secretary"] = link.content
             admirals_file = open(ROOT_DIR + os.sep + "config" + os.sep + "admirals.yml", "w")
@@ -447,7 +527,14 @@ async def menu(client, message, admirals, secr):
         \n\t4. Remove secretary\
         \n\nType abort to exit```")
 
-    msg = await client.wait_for_message(channel=message.channel,author=message.author)
+    msg = ''
+    try:
+        msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+    except asyncio.TimeoutError:
+        await delete_last_message(client, message)
+        await client.send_message(user, "`Aborting becuase of timeout!`")
+        await sleep(5)
+        return
     
     if msg.content.lower() == "abort":
         await delete_last_message(client, message)
@@ -462,7 +549,14 @@ async def menu(client, message, admirals, secr):
             \n\t4. Remove secretary\
             \n\nType abort to exit```")
 
-        msg = await client.wait_for_message(channel=message.channel, author=message.author)
+        msg = ''
+        try:
+            msg = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+        except asyncio.TimeoutError:
+            await delete_last_message(client, message)
+            await client.send_message(user, "`Aborting becuase of timeout!`")
+            await sleep(5)
+            return
 
         if msg.content.lower() == "abort":
             await delete_last_message(client, message)
