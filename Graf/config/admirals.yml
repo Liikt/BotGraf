@@ -1,8 +1,8 @@
 '126898852241473537':
   Enabled: true
   Offset: '-4:0'
-  Secretary: https://cdn.discordapp.com/attachments/289547913779085313/314569221545656350/tumblr_odbvrso5L91ur7gloo1_1280.jpg
-  Shipfu: Taigei
+  Secretary: http://static.zerochan.net/Gangut.%28Kantai.Collection%29.full.2098381.jpg
+  Shipfu: Gangut
 '138149441335984133':
   Enabled: true
   Offset: '-4:0'
@@ -16,8 +16,8 @@
 '194178693113839618':
   Enabled: true
   Offset: '2:0'
-  Secretary: http://i3.kym-cdn.com/photos/images/original/001/094/875/3b0.jpg
-  Shipfu: Iowa
+  Secretary: ''
+  Shipfu: Graf Zeppelin
 '196194242836561920':
   Enabled: true
   Offset: '3:0'
@@ -38,8 +38,13 @@
   Offset: '-5:0'
   Secretary: ''
   Shipfu: Bismarck
+'283354535857225731':
+  Enabled: false
+  Offset: '-4:0'
+  Secretary: ''
+  Shipfu: Taihou
 '98201428434104320':
   Enabled: true
   Offset: '20:0'
-  Secretary: https://s-media-cache-ak0.pinimg.com/736x/cb/00/93/cb0093a6b67e0229a5559f310e323ea0.jpg
-  Shipfu: Littorio
+  Secretary: https://vignette2.wikia.nocookie.net/kancolle/images/1/15/BB_Nagato_Kai_Ni_541_Full.png/revision/latest?cb=20170522114932
+  Shipfu: Nagato

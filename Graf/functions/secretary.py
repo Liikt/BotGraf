@@ -118,11 +118,13 @@ async def send_hourlies(client):
                             await client.send_message(user, embed=embeded)
                         except:
                             embeded = discord.Embed(description="I somehow couldn't load your picture!", color=discord.Colour(0xFF0000))
-                            await client.send_message(user, embed=embeded)
-
+                            #await client.send_message(user, embed=embeded)
+                            print(user.name)
                     embeded = discord.Embed(description=secr[admirals[admiral]["Shipfu"]][t], color=discord.Colour(0xe67e22))
-                    await client.send_message(user, embed=embeded)
-
+                    try:
+                        await client.send_message(user, embed=embeded)
+                    except:
+                        pass
                     syslog(str(m) +  " -> " + admirals[admiral]["Shipfu"] + " at " + str(t) + " => " + secr[admirals[admiral]["Shipfu"]][t])
   
         first = 60-gmtime(time()).tm_min  
@@ -436,13 +438,15 @@ async def changesettings(client, message, admirals, secr):
             await client.send_message(user, "`Please give me a link the the Picture you want to set. (You have 60 seconds, it also can take a bit to load. >.<)`")
             while answ == "n":
                 try:
+                    print('Foo')
                     link = await client.wait_for_message(timeout=60, channel=message.channel,author=message.author)
+                    print(link)
                 except asyncio.TimeoutError:
                     await delete_last_message(client, message)
                     await client.send_message(user, "`Aborting becuase of timeout!`")
                     await sleep(5)
                     return
-                
+                print('bar')
                 if link is None or link.content == "exit":
                     await client.send_message(user, "`Aborting!`")
                     return
