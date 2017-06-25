@@ -37,7 +37,7 @@ async def help(client, message):
         \nCurrent things I can do:\n\teval <calculations> -> Calculate the problem! (@{} eval 9.1*5/6.5*6)\
         \n\txkcd [number] -> This will fetch a xkcd comic for you. You can choose one by providing a number. (@{} xkcd 60)\
         \n\tsecretary -> This opens the secretary menu for assigning secretaryships, etc. (@{} secretary)\
-        \n\tzalgo <cancerlevel> <mode>-> This zalgofies a given string. Cancerlevels are 1,2,3 and modes are (u)p,(d)own,(m)iddle \n\t\t(@{} zalgo 2 udm foobarbaz)```".format(name, name, name, name))
+        \n\troll <expression> -> This is a copy of the roll function from roll20\n\t\t(@{} r (d20+5)/d6)```".format(name, name, name, name))
 
 async def xkcd(client, message):
     await client.send_typing(message.channel)
