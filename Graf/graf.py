@@ -13,6 +13,7 @@ from subprocess import Popen
 from utils.utils import *
 from utils.secret import key
 from functions.other import *
+from functions.dice import *
 #from functions.CaH import *
 from functions.secretary import *
 
@@ -115,6 +116,11 @@ async def on_message(message):
                 elif m.split()[0] == "xkcd":
                     await xkcd(client, message)
                 
+                elif m.lower().split()[0] == "r" or m.lower().split()[0] == "roll":
+                    result, randn = roll(''.join(m.split()[1:]))
+                    embeded = discord.Embed(description=":game_die: ```You rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
+                    await client.send_message(message.channel, embed=embeded)
+
                 elif m.split()[0].lower() == "secretary":
                     await menu(client, message, admirals, secr)
                     reloadall()
