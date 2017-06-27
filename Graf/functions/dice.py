@@ -25,8 +25,8 @@ def roll(orig):
 				try:
 					new += str(randint(1,int(die))) + v
 				except:
-					return -1
-				
+					return '', -1
+
 				dice = False
 				die = ''
 			else:
@@ -46,7 +46,7 @@ def roll(orig):
 			return '', -1
 
 	try:
-		ret = int(eval(new))	
+		ret = int(eval(new))
 	except:
 		pass
 
