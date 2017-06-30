@@ -118,7 +118,7 @@ async def on_message(message):
                 
                 elif m.lower().split()[0] == "r" or m.lower().split()[0] == "roll":
                     result, randn = roll(''.join(m.split()[1:]))
-                    embeded = discord.Embed(description=":game_die: ```You rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
+                    embeded = discord.Embed(description=":game_die: ```<@"+message.author.id+">, you rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
                     await client.send_message(message.channel, embed=embeded)
 
                 elif m.split()[0].lower() == "secretary":
