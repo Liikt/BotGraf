@@ -6,6 +6,7 @@ import requests
 import yaml
 import random
 import os
+import fuckit
 
 from time import gmtime, time, sleep
 from subprocess import Popen
@@ -78,11 +79,11 @@ async def on_ready():
 
     await client.edit_profile(username=name)
     reloadall()
-    
+
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
-    
+
     while True:
         try:
             await client.change_presence(game=discord.Game(name=game))
@@ -92,7 +93,7 @@ async def on_ready():
 
     print("Changed status to '" + game + "'")
     print('------')
-    
+
     await send_hourlies(client)
 
 @client.event
@@ -105,30 +106,34 @@ async def on_message(message):
     if not message.channel.is_private:
         if client.user in message.mentions and not message.author.bot:
             m = " ".join(message.content.split()[1:])
-            
+
             if len(m) >= 1:
                 if m.split()[0] == "eval":
                     await evaluate(client, message)
-                
+
                 elif m.split()[0] == "help":
                     await help(client, message)
-                
+
                 elif m.split()[0] == "xkcd":
                     await xkcd(client, message)
-                
+
                 elif m.lower().split()[0] == "r" or m.lower().split()[0] == "roll":
                     result, randn = roll(''.join(m.split()[1:]))
-                    embeded = discord.Embed(description=":game_die: ```<@"+message.author.id+">, you rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
+                    with fuckit:
+                        embeded = discord.Embed(description=":game_die: ```"+message.author.nick+", you rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
+                        await client.send_message(message.channel, embed=embeded)
+                        return
+                    embeded = discord.Embed(description=":game_die: ```"+message.author.id+", you rolled {} = {}```".format(result, randn), color=discord.Colour(0x00FF00))
                     await client.send_message(message.channel, embed=embeded)
 
                 elif m.split()[0].lower() == "secretary":
                     await menu(client, message, admirals, secr)
                     reloadall()
-                
+
                 # elif m.split()[0] == "CaH":
                 #     found = False
                 #     correct_role = False
-                    
+
                 #     for role in message.author.roles:
                 #         if role.name in ["Card Master", "Senpai", "Overlord"]:
                 #             correct_role = True
@@ -147,7 +152,7 @@ async def on_message(message):
                 #                 await client.send_message(message.channel, "I found a good Channel but there are to few people in it")
                 #         elif c.name == "CaH":
                 #             await client.send_message(message.channel, "I found a CaH Chanel but that sadly isn't a voice Channel")
-                    
+
                 #     if found:
                 #         await cah_menu(client, message)
 
@@ -157,10 +162,10 @@ async def on_message(message):
                     minute = str(int((cur-starttime-int(hour))/60))
                     await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
                      + hour + " hours and " + minute + " minutes.")
-                
+
                 #elif m.split()[0] == "debug":
                 #    await debug_secr(client, message)
-                
+
                 else:
                     await client.send_message(message.channel, random.choice(lines[name]))
 
