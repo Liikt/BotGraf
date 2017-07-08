@@ -42,6 +42,12 @@ async def check_shitpost(client, message):
     
     if "balans" in message.content.lower():
         await client.send_message(message.channel, ":flag_ru:")
+    
+    if "your mom" in message.content.lower():
+        await client.send_message(message.channel, "NO YOUR MOM!") 
+
+    if "dumb" in message.content.lower():
+        await client.send_message(message.channel, "NO YOU'RE DUMB!")
 
     if "desire" in message.content.lower():
         link = choice(desire)
