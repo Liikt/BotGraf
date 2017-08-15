@@ -1,1 +1,1 @@
-# CancerBot brought to you bye Summits' fucked up Server
+# CancerBot brought to you by Summits' fucked up Server
