@@ -1,10 +1,10 @@
 '126898852241473537':
   Enabled: true
   Offset: '-4:0'
-  Secretary: http://static.zerochan.net/Gangut.%28Kantai.Collection%29.full.2098381.jpg
-  Shipfu: Gangut
+  Secretary: ''
+  Shipfu: Graf Zeppelin
 '138149441335984133':
-  Enabled: true
+  Enabled: false
   Offset: '-4:0'
   Secretary: https://cdn.discordapp.com/attachments/293504101738610690/306641057540603904/2327f47746bbe368d5c516e84eeb0609.jpg
   Shipfu: Haruna
@@ -13,11 +13,11 @@
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Commandant Teste
-'146054167692181504':
+'187262611295961089':
   Enabled: true
-  Offset: '-3:0'
+  Offset: 4:-1
   Secretary: ''
-  Shipfu: I-19
+  Shipfu: Akitsu Maru
 '194178693113839618':
   Enabled: true
   Offset: '2:0'
@@ -48,13 +48,8 @@
   Offset: '-4:0'
   Secretary: ''
   Shipfu: Taihou
-'91948654251745280':
-  Enabled: true
-  Offset: '2:0'
-  Secretary: ''
-  Shipfu: Kongou
 '98201428434104320':
-  Enabled: true
+  Enabled: false
   Offset: '20:0'
   Secretary: https://vignette2.wikia.nocookie.net/kancolle/images/1/15/BB_Nagato_Kai_Ni_541_Full.png/revision/latest?cb=20170522114932
   Shipfu: Nagato
