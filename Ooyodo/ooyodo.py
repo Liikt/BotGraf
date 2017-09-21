@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#test
 
 import discord
 import asyncio
@@ -8,7 +9,7 @@ from utils.secret import key
 
 ROOT_DIR = os.getcwd()
 name = "Ooyodo"
-game = "@{} help for help".format(name)
+game = "nothing"
 client = discord.Client()
 starttime = 0
 
