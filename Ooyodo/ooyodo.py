@@ -2,6 +2,7 @@
 
 import discord
 import asyncio
+import os
 
 
 ROOT_DIR = os.getcwd()
