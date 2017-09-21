@@ -5,7 +5,7 @@ import discord
 import asyncio
 import os
 from utils.secret import key
-
+from functions.reminder import quest
 
 ROOT_DIR = os.getcwd()
 name = "Ooyodo"
