@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-#test
 
 import discord
 import asyncio
 import os
 from utils.secret import key
-from functions.reminder import quest
+from functions.reminder import pvp
 
 ROOT_DIR = os.getcwd()
 name = "Ooyodo"
@@ -24,6 +23,8 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name=game))
     print("Changed status to '" + game + "'")
     print('------')
+
+    await pvp(client)
 
 @client.event
 async def on_message(message):
