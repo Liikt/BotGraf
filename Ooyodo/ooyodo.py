@@ -3,6 +3,7 @@
 import discord
 import asyncio
 import os
+from utils.secret import key
 
 
 ROOT_DIR = os.getcwd()
