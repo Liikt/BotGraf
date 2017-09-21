@@ -5,7 +5,6 @@ import yaml
 import random
 import os
 import syslog
-from utils.utils import *
 from time import gmtime, time, sleep
 
 name = "Ram"
