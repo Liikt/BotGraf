@@ -14,3 +14,5 @@ Other:
  ☐ write a logger for the bot @created(17-09-22 13:03)
    ☐ with logrotate @created(17-09-22 13:05)
    ☐ move debug prints to the logger @created(17-09-22 13:14)
+
+ ☐ update the comments @created(17-09-22 14:31)
