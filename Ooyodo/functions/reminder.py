@@ -31,7 +31,7 @@ async def pvp(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while 25 < gmtime(time()).tm_min < 35 or (17 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 25 < gmtime(time()).tm_min < 35 or (17 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~11.5 hours
@@ -86,7 +86,7 @@ async def quests(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while 25 < gmtime(time()).tm_min < 35 or (19 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 25 < gmtime(time()).tm_min < 35 or (19 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~23.5 hours
