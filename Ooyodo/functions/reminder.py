@@ -31,7 +31,7 @@ async def pvp(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while not 21 < gmtime(time()).tm_min < 31 or (17 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 28 < gmtime(time()).tm_min < 31 or (17 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~11.5 hours
