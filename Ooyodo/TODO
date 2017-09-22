@@ -1,2 +1,16 @@
+Functions:
  ✔ reminder for pvp @created(17-09-21 16:20) @done (17-09-21 21:13)
+
  ☐ reminder for daily/weekly/monthly quest @created(17-09-21 21:13)
+   ☐ daily @created(17-09-22 13:03)
+   ☐ weekly @created(17-09-22 13:03)
+   ☐ monthly @created(17-09-22 13:03)
+   Quarerly qests?
+
+
+--- ✄ -----------------------
+
+Other:
+ ☐ write a logger for the bot @created(17-09-22 13:03)
+   ☐ with logrotate @created(17-09-22 13:05)
+   ☐ move debug prints to the logger @created(17-09-22 13:14)
