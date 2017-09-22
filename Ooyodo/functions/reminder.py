@@ -111,11 +111,33 @@ async def quests(client):
             else:
                 quests = 'monthly, ' + quests
 
+            # Check if the quarterly quests are also resetting
+            if gmtime(time()).tm_mon in [3, 6, 9, 12]:
+                quests = 'quarterly, ' + quests
+
+        # Check if it's the last day of the month or a week before
+        if gmtime(time()).tm_mday in [24, 30]:
+            # Set the placeholders
+            desc = 'monthly'
+            remaining = 'week'
+
+            # Check if the quarterlys also are resetting soon
+            if gmtime(time()).tm_mon in [3, 6, 9, 12]:
+                # Add quarterlies to the placeholder
+                desc = 'quarterly and ' + desc
+
+            # Check if it's actually the last day of the month
+            if gmtime(time()).tm_mday == 30:
+                # If so change the placeholder
+                remaining = 'or two days'
+
+            # Send the message for the week or day before warning
+            desc = ":exclamation: {} quests will reset in about one {}".format(desc, remaining)
+            embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
 
         # prepare and send the 30 minute before warning
         desc = ":exclamation: {} quests will reset in about 30 minutes".format(quests)
         embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
-
         await client.send_message(channel, embed=embed)
 
         # wait the 30 minutes
