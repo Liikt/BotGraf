@@ -2,6 +2,7 @@ import discord
 import asyncio
 from time import gmtime, time, sleep
 
+from utils.logger import log
 from utils.utils import get_channel_by_id
 
 
