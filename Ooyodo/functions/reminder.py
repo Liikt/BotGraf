@@ -39,7 +39,7 @@ async def pvp(client):
 
     while True:
         # prevent timedrift due to different clocks also to prevent missing the time completly have
-        # a +-5 minutes timewindow
+        # a +-1 minute timewindow
         while 21 < gmtime(time()).tm_min < 31:
             await asyncio.sleep(10)
 
@@ -95,7 +95,7 @@ async def quests(client):
     while True:
         quests = 'daily'
         # prevent timedrift due to different clocks also to prevent missing the time completly have
-        # a +-5 minutes timewindow
+        # a +-1 minute timewindow
         while 21 < gmtime(time()).tm_min < 31:
             await asyncio.sleep(10)
 
