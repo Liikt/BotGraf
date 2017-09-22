@@ -44,7 +44,7 @@ async def pvp(client):
             await asyncio.sleep(10)
 
         # prepare and send the 30 minute before warning
-        desc = ":exclamation: PvP will reset in about 30 minutes"
+        desc = ":exclamation: Admiral, PvP's will reset in about 30 minutes"
         embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
 
         await client.send_message(channel, embed=embed)
@@ -53,7 +53,7 @@ async def pvp(client):
         await asyncio.sleep(30*60)
 
         # prepare and send the reset message
-        desc = ":exclamation: PvP is reset"
+        desc = ":exclamation: Admiral, PvP's have reset."
         embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
         await client.send_message(channel, embed=embed)
 
@@ -132,11 +132,11 @@ async def quests(client):
                 remaining = 'or two days'
 
             # Send the message for the week or day before warning
-            desc = ":exclamation: {} quests will reset in about one {}".format(desc, remaining)
+            desc = ":exclamation: {} Admiral, quests will reset in about one {}".format(desc, remaining)
             embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
 
         # prepare and send the 30 minute before warning
-        desc = ":exclamation: {} quests will reset in about 30 minutes".format(quests)
+        desc = ":exclamation: {} Admiral, quests will reset in about 30 minutes".format(quests)
         embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
         await client.send_message(channel, embed=embed)
 
@@ -144,7 +144,7 @@ async def quests(client):
         await asyncio.sleep(30*60)
 
         # prepare and send the reset message
-        desc = ":exclamation: {} quests is reset".format(quests)
+        desc = ":exclamation: {} Admiral, quests have reset".format(quests)
         embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
         await client.send_message(channel, embed=embed)
 
