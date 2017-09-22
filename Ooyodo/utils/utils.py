@@ -1,10 +1,5 @@
 import discord
 import asyncio
-import requests
-import yaml
-import random
-import os
-from time import gmtime, time, sleep
 
 
 """

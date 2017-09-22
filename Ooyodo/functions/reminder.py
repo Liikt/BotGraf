@@ -1,6 +1,5 @@
 import discord
 import asyncio
-import os
 from time import gmtime, time, sleep
 
 from utils.utils import get_channel_by_id
