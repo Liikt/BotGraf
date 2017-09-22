@@ -17,16 +17,17 @@ async def pvp(client):
     first = (17 - gmtime(time()).tm_hour) % 12
 
     # Find the channel where to send the reminder
-    kancolle_stuff_id = '242858060224135168'
-    channel = await get_channel_by_id(client, kancolle_stuff_id)
+    channel_id = '242858060224135168'
+    channel = await get_channel_by_id(client, channel_id)
 
     # Check if the channel was found
     if channel is None:
-        print("Couldn't find kancolle stuff!")
+        log('WARN', 'pvp', "Couldn't channel with id {}".format(channel_id))
         return
 
-    # Debug Print
-    print("I should remind in:", first, 'hours and', (30-gmtime(time()).tm_min) % 60, 'minutes in', channel.name, 'for pvp.')
+    # Debug log
+    log('INFO', 'pvp', 'I should remind in: {} hours and {} minutes in {} for pvp.'\
+            .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
     while 25 < gmtime(time()).tm_min < 35 or (17 - gmtime(time()).tm_hour) % 12 != 0:
@@ -71,17 +72,17 @@ async def quests(client):
     first = (19 - gmtime(time()).tm_hour) % 12
 
     # Find the channel where to send the reminder
-    kancolle_stuff_id = '242858060224135168'
-    channel = await get_channel_by_id(client, kancolle_stuff_id)
+    channel_id = '242858060224135168'
+    channel = await get_channel_by_id(client, channel_id)
 
     # Check if the channel was found
     if channel is None:
-        print("Couldn't find kancolle stuff!")
+        log('WARN', 'quests', "Couldn't channel with id {}".format(channel_id))
         return
 
-    # Debug Print
-    print("I should remind in:", first, 'hours and', (30-gmtime(time()).tm_min) % 60, 'minutes in', channel.name, 'for quests.')
-
+    # Debug log
+    log('INFO', 'quests', 'I should remind in: {} hours and {} minutes in {} for quests.'\
+            .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
     while 25 < gmtime(time()).tm_min < 35 or (19 - gmtime(time()).tm_hour) % 12 != 0:

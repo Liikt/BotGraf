@@ -1,6 +1,8 @@
 import discord
 import asyncio
 
+from utils.logger import log
+
 
 """
 setup is a function that sets up the client and changes the given information.
@@ -17,11 +19,8 @@ async def setup(client, name, game):
 
     # Log the current state
     # TODO: write an actual logger
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print("Changed status to '" + game + "'")
-    print('------')
+    log('INFO', 'setup', 'Logged in as {} with id {}'.format(client.user.name, client.user.id))
+    log('INFO', 'setup', "Changed status to '{}'".format(game))
 
 
 """
@@ -43,8 +42,7 @@ def async_concurrent(function, client):
             yield from function(client)
         except Exception as e:
             # Catch the error and log it
-            # TODO: write an actual logger that logs into a file
-            print('Got an exception in', function.__name__)
+            log('ERROR', function.__name__, str(e).split('\n')[-1])
 
 
 """
