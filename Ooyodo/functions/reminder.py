@@ -53,7 +53,7 @@ async def pvp(client):
         await asyncio.sleep(30*60)
 
         # prepare and send the reset message
-        desc = ":exclamation: PvP is reseted"
+        desc = ":exclamation: PvP is reset"
         embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
         await client.send_message(channel, embed=embed)
 
@@ -144,7 +144,7 @@ async def quests(client):
         await asyncio.sleep(30*60)
 
         # prepare and send the reset message
-        desc = ":exclamation: {} quests is reseted".format(quests)
+        desc = ":exclamation: {} quests is reset".format(quests)
         embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
         await client.send_message(channel, embed=embed)
 
