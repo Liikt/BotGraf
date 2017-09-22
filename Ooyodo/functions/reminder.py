@@ -86,7 +86,7 @@ async def quests(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while not 21 < gmtime(time()).tm_min < 31 or (19 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 28 < gmtime(time()).tm_min < 32 or (19 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~23.5 hours
@@ -96,7 +96,7 @@ async def quests(client):
         quests = 'daily'
         # prevent timedrift due to different clocks also to prevent missing the time completly have
         # a +-1 minute timewindow
-        while 21 < gmtime(time()).tm_min < 31:
+        while 28 < gmtime(time()).tm_min < 32:
             await asyncio.sleep(10)
 
         # Check if today is a monday and the weekly quests reset
