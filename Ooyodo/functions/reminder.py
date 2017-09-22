@@ -31,7 +31,7 @@ async def pvp(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while not 25 < gmtime(time()).tm_min < 35 or (17 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 21 < gmtime(time()).tm_min < 31 or (17 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~11.5 hours
@@ -40,7 +40,7 @@ async def pvp(client):
     while True:
         # prevent timedrift due to different clocks also to prevent missing the time completly have
         # a +-5 minutes timewindow
-        while 25 < gmtime(time()).tm_min < 35:
+        while 21 < gmtime(time()).tm_min < 31:
             await asyncio.sleep(10)
 
         # prepare and send the 30 minute before warning
@@ -86,7 +86,7 @@ async def quests(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while not 25 < gmtime(time()).tm_min < 35 or (19 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 21 < gmtime(time()).tm_min < 31 or (19 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~23.5 hours
@@ -96,7 +96,7 @@ async def quests(client):
         quests = 'daily'
         # prevent timedrift due to different clocks also to prevent missing the time completly have
         # a +-5 minutes timewindow
-        while 25 < gmtime(time()).tm_min < 35:
+        while 21 < gmtime(time()).tm_min < 31:
             await asyncio.sleep(10)
 
         # Check if today is a monday and the weekly quests reset
