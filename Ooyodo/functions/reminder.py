@@ -70,7 +70,7 @@ never returns
 """
 async def quests(client):
     # Calculate the time difference and when to send the first message
-    first = (19 - gmtime(time()).tm_hour) % 12
+    first = (5 + gmtime(time()).tm_hour) % 12
 
     # Find the channel where to send the reminder
     channel_id = '242858060224135168'
@@ -86,7 +86,7 @@ async def quests(client):
             .format(first, (30-gmtime(time()).tm_min) % 60, channel.name))
 
     # Wait a bit to get approximatly the right time to send
-    while not 28 < gmtime(time()).tm_min < 32 or (19 - gmtime(time()).tm_hour) % 12 != 0:
+    while not 28 < gmtime(time()).tm_min < 32 or (5 + gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
     # reset the variable so we always wait ~23.5 hours
