@@ -27,3 +27,7 @@ Ideas for functionailty:
 
     Mapping from string to functionobject funcdict = {'function1': function1, 'function2': function2}
     Save all enabled functions in a config and reload that config on certain occasions
+
+  - merge the bots together
+    Have all the functions in one folder for better structure and less space. One script for each bot
+    which then imports the functions
