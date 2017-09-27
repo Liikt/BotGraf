@@ -45,7 +45,7 @@ async def pvp(client):
 
         # prepare and send the 30 minute before warning
         desc = ":exclamation: Admiral, PvP's will reset in about 30 minutes"
-        embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
+        embed = discord.Embed(description=desc, color=discord.Colour(0xffff00))
 
         await client.send_message(channel, embed=embed)
 
@@ -54,7 +54,7 @@ async def pvp(client):
 
         # prepare and send the reset message
         desc = ":exclamation: Admiral, PvP's have reset."
-        embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
+        embed = discord.Embed(description=desc, color=discord.Colour(0x00ff00))
         await client.send_message(channel, embed=embed)
 
         # wait 12 hours minus 30 minutes for the warning
@@ -133,11 +133,11 @@ async def quests(client):
 
             # Send the message for the week or day before warning
             desc = ":exclamation:  Admiral, {} quests will reset in about one {}".format(desc, remaining)
-            embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
+            embed = discord.Embed(description=desc, color=discord.Colour(0xffff00))
 
         # prepare and send the 30 minute before warning
         desc = ":exclamation:  Admiral, {} quests will reset in about 30 minutes".format(quests)
-        embed = discord.Embed(description=desc, color=discord.Colour(0xb736b0))
+        embed = discord.Embed(description=desc, color=discord.Colour(0xffff00))
         await client.send_message(channel, embed=embed)
 
         # wait the 30 minutes
@@ -145,7 +145,7 @@ async def quests(client):
 
         # prepare and send the reset message
         desc = ":exclamation:  Admiral, {} quests have reset".format(quests)
-        embed = discord.Embed(description=desc, color=discord.Colour(0xff0000))
+        embed = discord.Embed(description=desc, color=discord.Colour(0x00ff00))
         await client.send_message(channel, embed=embed)
 
         # wait 24 hours minus 30 minutes for the warning
