@@ -34,9 +34,6 @@ async def pvp(client):
     while not 28 < gmtime(time()).tm_min < 31 or (17 - gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
 
-    # reset the variable so we always wait ~11.5 hours
-    first = 12
-
     while True:
         # prevent timedrift due to different clocks also to prevent missing the time completly have
         # a +-1 minute timewindow
@@ -59,7 +56,7 @@ async def pvp(client):
         log('INFO', 'pvp', 'Sending reminder for pvp')
 
         # wait 12 hours minus 30 minutes for the warning
-        await asyncio.sleep((first*60*60) - 30*60)
+        await asyncio.sleep((12*60*60) - 30*60)
 
 
 """
@@ -89,9 +86,6 @@ async def quests(client):
     # Wait a bit to get approximatly the right time to send
     while not 28 < gmtime(time()).tm_min < 32 or (5 + gmtime(time()).tm_hour) % 12 != 0:
         await asyncio.sleep(30)
-
-    # reset the variable so we always wait ~23.5 hours
-    first = 24
 
     while True:
         quests = 'daily'
@@ -154,4 +148,4 @@ async def quests(client):
 
 
         # wait 24 hours minus 30 minutes for the warning
-        await asyncio.sleep((first*60*60) - 30*60)
+        await asyncio.sleep((24*60*60) - 30*60)
