@@ -104,9 +104,8 @@ async def quests(client):
         if gmtime(time()).tm_wday == 6:
             quests = 'weekly and ' + quests
 
-        # Check if today the last day of a month with 31 days or
+        # Check if today the last day of a month with 31 days or the last day of a month with 30 days
         if (gmtime(time()).tm_mon in [1, 3, 5, 7, 8, 10, 12] and gmtime(time()).tm_mday == 31) or\
-        # Check if today the last day of a month with 30 days
            (gmtime(time()).tm_mon not in [1, 3, 5, 7, 8, 10, 12] and gmtime(time()).tm_mday == 30):
             # Check if today is also a monday to make the print a bit prittier
             if quests == 'daily':
