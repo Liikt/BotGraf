@@ -95,11 +95,13 @@ async def quests(client):
             await asyncio.sleep(10)
 
         # Check if today is a monday and the weekly quests reset
-        if gmtime(time()).tm_wday == 0:
+        if gmtime(time()).tm_wday == 6:
             quests = 'weekly and ' + quests
 
-        # Check if today is a first of a month and the monthly quests reset
-        if gmtime(time()).tm_mday == 1:
+        # Check if today the last day of a month with 31 days or
+        if (gmtime(time()).tm_mon in [1, 3, 5, 7, 8, 10, 12] and gmtime(time()).tm_mday == 31) or
+        # Check if today the last day of a month with 30 days
+           (gmtime(time()).tm_mon not in [1, 3, 5, 7, 8, 10, 12] and gmtime(time()).tm_mday == 30):
             # Check if today is also a monday to make the print a bit prittier
             if quests == 'daily':
                 quests = 'monthly and ' + quests
@@ -110,19 +112,20 @@ async def quests(client):
             if gmtime(time()).tm_mon in [3, 6, 9, 12]:
                 quests = 'quarterly, ' + quests
 
+        # TODO: Handle february and leap years
         # Check if it's the last day of the month or a week before
-        if gmtime(time()).tm_mday in [24, 30]:
+        if gmtime(time()).tm_mday in [23, 29]:
             # Set the placeholders
             desc = 'monthly'
             remaining = 'week'
 
             # Check if the quarterlys also are resetting soon
-            if gmtime(time()).tm_mon in [3, 6, 9, 12]:
+            if gmtime(time()).tm_mon in [2, 5, 8, 11]:
                 # Add quarterlies to the placeholder
                 desc = 'quarterly and ' + desc
 
             # Check if it's actually the last day of the month
-            if gmtime(time()).tm_mday == 30:
+            if gmtime(time()).tm_mday == 29:
                 # If so change the placeholder
                 remaining = 'or two days'
 
