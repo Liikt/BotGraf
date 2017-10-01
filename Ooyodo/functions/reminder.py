@@ -18,7 +18,7 @@ async def pvp(client):
     first = (17 - gmtime(time()).tm_hour) % 12
 
     # Find the channels where to send the reminder
-    channel_ids = ['242858060224135168']
+    channel_ids = ['242858060224135168', '357533477618450443']
     channels = get_channel_by_ids(client, channel_ids)
 
     # Check if the all the channels were found
@@ -75,7 +75,7 @@ async def quests(client):
     first = (5 + gmtime(time()).tm_hour) % 24
 
     # Find the channels where to send the reminder
-    channel_ids = ['242858060224135168']
+    channel_ids = ['242858060224135168', '357533477618450443']
     channels = get_channel_by_ids(client, channel_ids)
 
     # Check if the all the channels were found
