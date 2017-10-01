@@ -3,7 +3,7 @@ import asyncio
 from time import gmtime, time, sleep
 
 from utils.logger import log
-from utils.utils import get_channel_by_id
+from utils.utils import get_channel_by_id, get_channel_by_ids
 
 
 """
