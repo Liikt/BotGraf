@@ -53,7 +53,7 @@ It takes the client object and the id for the channel to search for
 
 It returns either the channelobject and the name or None if no channel was found
 """
-async def get_channel_by_id(client, id):
+def get_channel_by_id(client, id):
 
     # Iterate over every Server the client is in (for now just Arlios' server)
     for s in client.servers:
@@ -76,7 +76,7 @@ It takes the client object and a list of channelids to search for
 
 It returns the list consiting of tuples of the name, the channelobject and the id of all found channels
 """
-async def get_channel_by_ids(client, ids):
+def get_channel_by_ids(client, ids):
     # Initialize a new return list
     ret = []
     # Go through all ids

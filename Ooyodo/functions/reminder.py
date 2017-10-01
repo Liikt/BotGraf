@@ -19,7 +19,7 @@ async def pvp(client):
 
     # Find the channels where to send the reminder
     channel_ids = ['242858060224135168']
-    channels = await get_channel_by_ids(client, channel_ids)
+    channels = get_channel_by_ids(client, channel_ids)
 
     # Check if the all the channels were found
     if len(channels) != len(channel_ids):
@@ -76,7 +76,7 @@ async def quests(client):
 
     # Find the channels where to send the reminder
     channel_ids = ['242858060224135168']
-    channels = await get_channel_by_ids(client, channel_ids)
+    channels = get_channel_by_ids(client, channel_ids)
 
     # Check if the all the channels were found
     if len(channels) != len(channel_ids):
