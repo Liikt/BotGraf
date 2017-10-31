@@ -5,3 +5,4 @@ daemon*
 *.bak
 */log/*
 *.idea
+*.sublime*
