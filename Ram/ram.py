@@ -61,22 +61,8 @@ async def on_message(message):
                 #    await debug(client, message)
                 elif m.split()[0] == "zalgo":
                     await zalgo(client, message)
-                elif m.split()[0] == "uptime":
-                    cur = time()
-                    hour = str(int((cur-starttime)/(60*60)))
-                    minute = str(int((cur-starttime-int(hour))/60))
-                    await client.send_message(message.channel, "<@"+message.author.id+"> I have been alive for " \
-                     + hour + " hours and " + minute + " minutes.")
                 else:
                     await client.send_message(message.channel, "I AM LIVING CANCER!")
         await check_shitpost(client, message)
-    # elif message.author.id == '194178693113839618':
-    #     if message.content == "delete":
-    #         async for mes in client.logs_from(message.channel):
-    #             try:
-    #                 await client.delete_message(mes)
-    #             except:
-    #                 pass
-    #     else:
-    #         print("\n".join([x["url"] for x in message.attachments]))
+
 client.run(key)
