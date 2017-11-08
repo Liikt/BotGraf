@@ -94,7 +94,7 @@ async def on_ready():
     print("Changed status to '" + game + "'")
     print('------')
 
-    await send_hourlies(client)
+    # await send_hourlies(client)
 
 @client.event
 async def on_message(message):
