@@ -26,7 +26,7 @@ async def greet(client):
     for s in client.servers:
         if s.id == '283066637928890379':
             for c in s.channels:
-                if not c.type == discord.ChannelType.voice and c.name.lower() in ['pestcontrol']:
+                if not c.type == discord.ChannelType.voice and c.name.lower() in ['dumb-bot-shit']:
                     await client.send_message(c, 'I HAVE RETURNED ONCE AGAIN TO BRING CANCER AND MEMES!')
 
 @client.event
@@ -50,7 +50,7 @@ async def on_ready():
 async def on_message(message):
     global starttime
     if not message.channel.is_private and not message.author.bot:
-        if message.channel.name.lower() in ['pestcontrol', 'dumb-bot-shit']:
+        if message.channel.name.lower() in ['dumb-bot-shit']:
             await client.add_reaction(message, '🐀')
         if client.user in message.mentions:
             m = " ".join(message.content.split()[1:])
