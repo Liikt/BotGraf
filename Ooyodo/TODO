@@ -1,0 +1,33 @@
+Functions:
+ ✔ reminder for pvp @created(17-09-21 16:20) @done (17-09-21 21:13)
+
+ ✔ reminder for daily/weekly/monthly quest @created(17-09-21 21:13) @done (17-09-22 15:22)
+   ✔ daily @created(17-09-22 13:03) @done (17-09-22 15:21)
+   ✔ weekly @created(17-09-22 13:03) @done (17-09-22 15:22)
+   ✔ monthly @created(17-09-22 13:03) @done (17-09-22 15:22)
+   ✔ Quarterly quests @created(17-09-22 18:15) @done (17-09-22 18:30)
+
+
+--- ✄ -----------------------
+
+Other:
+ ✔ write a logger for the bot @created(17-09-22 13:03) @done (17-09-22 17:41)
+   ✔ with logrotate @created(17-09-22 13:05) @done (17-09-22 17:41)
+   ✔ move debug prints to the logger @created(17-09-22 13:14) @done (17-09-22 17:41)
+
+ ✔ update the comments @created(17-09-22 14:31) @done (17-09-22 15:22)
+
+--- ✄ -----------------------
+
+Ideas for functionailty:
+  - add a hooksystem
+    The bot is definitely not scaleable but some people asked me to also have the bot on their server
+    so a hooksystem would allow the serverowner/a special role to enable and disable certain functions
+    and it could be used on other servers. 
+
+    Mapping from string to functionobject funcdict = {'function1': function1, 'function2': function2}
+    Save all enabled functions in a config and reload that config on certain occasions
+
+  - merge the bots together
+    Have all the functions in one folder for better structure and less space. One script for each bot
+    which then imports the functions
